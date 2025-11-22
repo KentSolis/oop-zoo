@@ -22,7 +22,7 @@ class Bird(Animal):
     def __init__(self, name, wingspan=1): #wingspan defaulted to 1 to change to null ?
         super().__init__(name, "Bird")
         self.wingspan = wingspan
-        print(f"The wingspan of this bird is {self.wingspan} meters")
+        print(f"The wingspan of the {self.name} is {self.wingspan} meters")
 
 class Reptile(Animal):
     def __init__(self, name):
@@ -74,7 +74,10 @@ aviary = Aviary()
 aviary.add_bird(bird1)
 aviary.add_bird(bird2)
 
-print([bird.name for bird in aviary.birds])
+print(bird1.name, bird1.wingspan)
+print(bird2.name, bird2.wingspan)
+
+print([bird.name for bird in aviary.birds], [bird.wingspan for bird in aviary.birds])
 
 
 class ReptileEnclosure:
@@ -87,8 +90,11 @@ class ReptileEnclosure:
 
 reptile1 = Reptile("Dragon")
 reptile2 = Reptile("Iguana")
+reptile3 = Reptile("Viper")
+
 reptile_area = ReptileEnclosure()
 reptile_area.add_reptile(reptile1)
 reptile_area.add_reptile(reptile2)
+reptile_area.add_reptile(reptile3)
 
 print([reptile.name for reptile in reptile_area.reptiles])
